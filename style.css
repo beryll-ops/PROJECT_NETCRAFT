@@ -1,0 +1,133 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* =============================
+    THAT IS A RESET
+==============================*/
+/* ============================
+    THOSE ARE GLOBAL STYLES
+   ============================*/
+@font-face {
+    font-family: Minecrafter;
+    src: url(./resources/Minecrafter.Alt.ttf) format('truetype');
+    
+}
+
+:root {
+    --primary-color: #D7D2A2;
+    --secondary-color: #4C8A2F;
+    --logo-background-color: #3030304D;
+    --body-background-color: #909090;
+    --background-opacity: 19%;
+}
+
+body {
+    background-color: #ccc;
+    background-image: url(./resources/background.png);
+}
+header .logo {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding: 5px;
+}
+header img {
+    
+}
+header h1{
+    background-color: #333;
+    color: #fff;
+    font-family: Minecrafter, Arial, sans-serif;
+    font-size: 36px;
+    text-shadow: 2px 2px 4px #000;
+}
+header .bg-shadow {
+    padding: 0;
+    text-align: center;
+}
+/* ============================
+    THE BEGINNING OF BREAKPOINT STYLES FOR RESPONSIVE DESIGN
+   ============================*/
+@media (max-width: 575px) {
+    body {
+        background-color: var(--body-background-color);
+    }
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    header .logo {
+        width: 55vw;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        border-radius: 5px;
+        background-color: var(--logo-background-color);
+    }
+    header img {
+        width: 55vw;
+    }
+    header h1 {
+        font-size: 7vw;
+    }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+    body {
+        background-color: #00F;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    body {
+        background-color: #FF0;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    body {
+        background-color: #F0F;
+    }
+}
+@media (min-width: 1200px) {
+    body {
+        background-color: #faA500;
+    }
+}
