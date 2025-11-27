@@ -166,6 +166,15 @@ header .bg-shadow {
 	padding: 0;
 	text-align: center;
 }
+
+.dark-bg-shadow {
+	background-color:#333333;
+	opacity: 25%;
+	padding: 5px;
+	margin:10px;
+	border-radius: 5px;
+}
+
 /* ============================
     THE BEGINNING OF BREAKPOINT STYLES FOR RESPONSIVE DESIGN
    ============================*/
