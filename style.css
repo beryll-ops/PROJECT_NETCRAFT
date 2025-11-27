@@ -138,11 +138,14 @@ table {
 	--primary-color-rgb: 215, 210, 162;
 	--secondary-color: #4c8a2f;
 	--logo-background-color: #3030304d;
+	--logo-background-color-rgb: 48, 48, 48;
 	--body-background-color: #909090;
 	--background-opacity: 19%;
 }
 
 body {
+	display: flex;
+	flex-direction: column;
 	background-color: #ccc;
 	background-image: url(./resources/background.png);
 }
@@ -165,6 +168,9 @@ header h1 {
 header .bg-shadow {
 	padding: 0;
 	text-align: center;
+}
+.invisible {
+	display: none;
 }
 /* ============================
     THE BEGINNING OF BREAKPOINT STYLES FOR RESPONSIVE DESIGN
@@ -190,6 +196,104 @@ header .bg-shadow {
 	}
 	header h1 {
 		font-size: 7vw;
+	}
+	/* IMPORTANT: following navigation styles may need to get trasnfered into new breakpoint category e.g. max-width: 767px or even 991px with no specified min-width */
+	/* closed menu's items shouldn't be visible with exception of burger icon which is excluded */
+	nav menu {
+		display: none;
+	}
+	/* burger style */
+	.burger-icon {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		justify-content: space-around;
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+	}
+	.burger-icon span {
+		width: 100%;
+		height: 4px;
+		position: relative;
+		transform: rotate(0deg);
+		transition: 0.3s ease-in-out;
+		cursor: pointer;
+		background-color: black;
+		border-radius: 2px;
+	}
+	.burger-icon span {
+		display: block;
+		position: absolute;
+		left: 0px;
+		transition: 0.3s ease-in-out;
+	}
+	.burger-icon span:nth-child(1) {
+		transform: rotate(0deg);
+		top: 6px;
+	}
+	.burger-icon span:nth-child(2) {
+		top: 15px;
+	}
+	.burger-icon span:nth-child(3) {
+		transform: rotate(0deg);
+		top: 24px;
+	}
+	.burger-icon.open span:nth-child(1) {
+		top: 15px;
+		left: calc(95vw - 15px);
+		rotate: 135deg;
+	}
+	.burger-icon.open span:nth-child(2) {
+		left: 70vw;
+		opacity: 0;
+	}
+	.burger-icon.open span:nth-child(3) {
+		top: 15px;
+		left: calc(95vw - 15px);
+		rotate: -135deg;
+	}
+
+	/* closed menu style */
+	nav {
+		width: 30px;
+		height: 30px;
+		background-color: rgba(var(--logo-background-color-rgb), 0);
+	}
+	/* opened menu style */
+	nav.open {
+		width: 100vw;
+		height: 90vh;
+		background-color: rgba(var(--logo-background-color-rgb), 0.95);
+		transition: width 0.3s ease-in-out, height 0.3s ease-in-out 0.3s;
+	}
+	nav.open menu {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		position: relative;
+	}
+	nav.open menu li {
+		position: absolute;
+		width: 25%;
+		left: -100px;
+		display: flex;
+		align-items: center;
+		left: 50%;
+	}
+	nav.open menu li:nth-child(1){
+		top: calc(30px + 2vh);
+	}
+	nav.open menu li:nth-child(2){
+		top: 20vh;
+	}
+	nav.open menu li:nth-child(3){
+	}
+	nav.open menu li:nth-child(4){
+	}
+	nav.open menu li:nth-child(5){
+	}
+	nav.open menu li:nth-child(6){
 	}
 }
 @media (min-width: 576px) and (max-width: 767px) {
