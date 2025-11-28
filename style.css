@@ -256,13 +256,30 @@ header .bg-shadow {
 	}
 
 	/* closed menu style */
-	nav {
+	@keyframes menuClosingColor {
+		0% {
+			background-color: rgba(var(--logo-background-color-rgb), 0.95)
+		}
+		85% {
+			background-color: rgba(var(--logo-background-color-rgb), 0);
+		}
+		100% {
+			background-color: rgba(var(--logo-background-color-rgb), 0);
+		}
+	}
+	nav.closing {
+		animation: menuClosingColor 0.3s forwards; 
+		/* changing the menu background color visibility back to 0 during menu closing action */
+	}
+	nav{
 		width: 30px;
 		height: 30px;
 		background-color: rgba(var(--logo-background-color-rgb), 0);
 		font-weight: 500;
 		color: #fff;
 		text-shadow: 1px 1px 1px #333;
+		transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+		/* thats the style of menu in it's closed state */
 	}
 	/* opened menu style */
 	nav.open {
@@ -271,12 +288,16 @@ header .bg-shadow {
 		background-color: rgba(var(--logo-background-color-rgb), 0.95);
 		transition: width 0.3s ease-in-out, height 0.3s ease-in-out 0.3s;
 	}
+	nav.closing menu li {
+		position: relative;
+	}
 	nav.open menu {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		position: relative;
 		align-content: center;
+		/* this ensures that items inside of menu (buttons) stay in a centered column */
 	}
 
 	nav.open menu li {
@@ -290,12 +311,13 @@ header .bg-shadow {
 		height: auto;
 		border-radius: 5px;
 		background-color: var(--primary-color);
+		/* nothing to see here, style for menu buttons, defaulting their position to left beyond the vieport to make later animations look good */
 	}
 	@keyframes menuSlideIn {
-		from {
+		0% {
 			left: -150px;
 		}
-		to {
+		100% {
 			left: 50%;
 		}
 	}
@@ -303,6 +325,7 @@ header .bg-shadow {
 		text-align: center;
 		font-size: 40px;
 	}
+	/* many declarations of using slideIn animation because of various delays to make it slide in like avalanche or something like that */
 	nav.open menu li:nth-child(1) {
 		top: calc(30px + 5vh);
 		animation: menuSlideIn .1s .6s forwards;
