@@ -173,12 +173,12 @@ header .bg-shadow {
 	text-align: center;
 }
 
-.dark-bg-shadow {
-	background-color:#333333;
-	opacity: 25%;
+.dark-bg-shadow { 			/* Style for darker shadow under contents of website*/
+	background-color:rgba(51, 51, 51, 0.25);
 	padding: 5px;
-	margin:10px;
+	margin: 15px 10px;
 	border-radius: 5px;
+	text-align: center;
 }
 
 .invisible {
@@ -408,3 +408,103 @@ header .bg-shadow {
 		background-color: #faa500;
 	}
 }
+
+/* =========== Speedometer =========== 
+	Slimmed Stolen code -- in development*/
+
+.gauge {
+	width: 200px;
+	height: 100px;
+	border-radius: 100px 100px 0 0;
+	position: relative;
+  	overflow: hidden;
+	display: inline-block;
+  	margin: 10px auto;
+}
+
+.gauge-center {
+	width: 60%;
+	height: 60%;
+	background: #15222E;
+	border-radius: 100px 100px 0 0;
+	position: absolute;
+	right: 21%;
+	bottom: 0;
+}
+
+.needle {
+    width: 78px;
+    height: 7px;
+    background: black;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 5px;
+    position: absolute;
+    bottom: 4px;
+    left: 20px;
+    transform-origin: 100% 4px;
+    animation: speed 15s infinite;
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.38);
+}
+
+.slice-colors .st {
+	position: absolute;
+	bottom: 0;
+	width: 60px;
+	height: 0;
+	border-bottom: 80px solid #000;
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+}
+.slice-colors .st.slice-item:nth-child(1) {
+	border-bottom-color: #1eaa59;
+	left: -2px;
+}
+.slice-colors .st.slice-item:nth-child(2) {
+	border-bottom-color: #9baa1e;
+	transform: rotate(135deg);
+	transform-origin: right;
+	top: 12px;
+	left: -65px;
+}
+.slice-colors .st.slice-item:nth-child(3) {
+	border-bottom-color: #f1c40f;
+	transform: rotate(179deg);
+	transform-origin: right;
+	top: -20px;
+	left: -62px;
+	border-bottom-width: 90px;
+	border-left-width: 45px;
+	border-right-width: 45px;
+	width: 18px;
+}
+.slice-colors .st.slice-item:nth-child(4) {
+	border-bottom-color: #e67e22;
+	transform: rotate(219deg);
+	transform-origin: right;
+	top: -23px;
+	left: 43px;
+}
+.slice-colors .st.slice-item:nth-child(5) {
+	border-bottom-color: #E84C3D;
+	transform: rotate(240deg);
+	transform-origin: right;
+	right: 52px;
+}
+
+@-webkit-keyframes speed {
+  0% {
+    transform: rotate(0);
+  }
+  40% {
+    transform: rotate(180deg);
+  }
+  55% {
+    transform: rotate(170deg);
+  }
+  75% {
+    transform: rotate(180deg);
+  }
+}
+/* End of speedometer */
