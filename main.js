@@ -1,13 +1,13 @@
-var serwer_check = 2;
+var server_check = 2;
 var players_number_check = 0;
 
-function serwer_start() {                   //function for serwer start/stop
-    if (serwer_check % 2 == 0) {
+function server_start() {                   //function for server start/stop
+    if (server_check % 2 == 0) {
         document.getElementById('button_on_off').src="./resources/OFF.png";
-        serwer_check += 1;
+        server_check += 1;
     } else {
         document.getElementById('button_on_off').src="./resources/ON.png";
-        serwer_check += 1;
+        server_check += 1;
     }
 }
 

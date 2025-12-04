@@ -3,9 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Status</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="style.css" />
-        <script src="main.js"></script>
 	</head>
 	<body>
 		<header>
@@ -17,57 +19,75 @@
 			</div>
 		</header>
 		<nav>
-			<div class="menu-background">
-				<div class="burger-icon" id="burger-icon">
-					<!-- THERE WILL BE SVG ICON INSTEAD OF THESE PARAGRAPHS -->
-					<p>---</p>
-					<p>---</p>
-					<p>---</p>
-				</div>
-					<menu>
-						<li>
-							<p>Home</p>
-						</li>
-						<li>
-							<p>Status</p>
-						</li>
-						<li>
-							<p>Gracze</p>
-						</li>
-						<li>
-							<p>Mapa</p>
-						</li>
-						<li>
-							<p>Czas online</p>
-						</li>
-						<li>
-							<p>Ustawienia</p>
-						</li>
-					</menu>
-				</div>
+			<!-- <div class="menu-background"> -->
+			<div class="burger-icon" id="burgerIcon">
+				<!-- transforming burger icon -->
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+			<menu>
+				<li>
+					<p>Home</p>
+				</li>
+				<li>
+					<p>Status</p>
+				</li>
+				<li>
+					<p>Gracze</p>
+				</li>
+				<li>
+					<p>Mapa</p>
+				</li>
+				<li>
+					<p>Czas online</p>
+				</li>
+				<li>
+					<p>Ustawienia</p>
+				</li>
+			</menu>
+			<!-- </div> -->
 		</nav>
 		<main>
-			<section> 
-                <!-- Switch turning On and Off serwer, also players count -->
-				<div class="">
-                    <img src="./resources/ON.png" alt="Button_on" width="40%" id="button_on_off" onclick="serwer_start()">
-
+			<section class="dark-bg-shadow"> 
+                <!-- Switch turning On and Off server, also players count -->
+				<div>
+                    <img src="./resources/ON.png" alt="Button_on" width="40%" id="button_on_off" onclick="server_start()">
 				</div>
-                <div class="">
+                <div>
 					<img src="./resources/number_of_players_0.png" alt="number of players online" id="number_0" width="40%">
+					<br>
 					<button onclick="players_number()">Test Wyświetlacza Graczy Online</button>
 					<button onclick="test_stop()">Reset testu</button>
 				</div>
                 <!-- End of whatever -->
+
                 <!-- There will be Working Clock With TPS Info-->
-				<div class="">
-
-				</div>
+					<div class="gauge">
+						<div class="slice-colors">
+						<div class="st slice-item"></div>
+						<div class="st slice-item"></div>
+						<div class="st slice-item"></div>
+						<div class="st slice-item"></div>
+						<div class="st slice-item"></div>
+						</div>
+						<div class="needle"></div>
+						<div class="gauge-center"></div>
+					</div>
                 <!-- End Of Clock -->
-                <!-- There will be Working Clock With RAM Info-->
-                <div class="">
 
-                </div>
+                <!-- There will be Working Clock With RAM Info-->
+					<div class="gauge">
+						<div class="slice-colors">
+						<div class="st slice-item"></div>
+						<div class="st slice-item"></div>
+						<div class="st slice-item"></div>
+						<div class="st slice-item"></div>
+						<div class="st slice-item"></div>
+						</div>
+						<div class="needle"></div>
+						<div class="gauge-center"></div>
+					</div>
                 <!-- End Of Clock -->
 			</section>
 		</main>
@@ -79,5 +99,6 @@
 				reserved.
 			</p>
 		</footer>
+		<script src="main.js"></script>
 	</body>
 </html>
