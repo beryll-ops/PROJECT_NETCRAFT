@@ -132,7 +132,10 @@ table {
 	font-family: Minecrafter;
 	src: url(./resources/Minecrafter.Alt.ttf) format('truetype');
 }
-
+@font-face {
+	font-family: seven-segment;
+	src: url(./resources/seven_segment.ttf) format('truetype');
+}
 :root {
 	--primary-color: #d7d2a2;
 	--primary-color-rgb: 215, 210, 162;
@@ -180,6 +183,30 @@ header .bg-shadow {
 
 .invisible {
 	display: none;
+}
+.uniting-for-container {
+	margin-top: 5vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.uniting-for-container p {
+	font-family: Roboto, Arial, sans-serif;
+}
+.uniting-for-container .bg-shadow{
+	max-width: 60vw;
+	padding: 2px;
+	border-radius: 5px;
+	background-color: rgba(var(--primary-color-rgb), 0.2);
+	color: #fff;
+	font-size: 24px;
+	text-shadow: 1px 1px 2px #000;
+	text-align: center;
+}
+.flap-clock {
+	position: relative;
+
 }
 /* ============================
     THE BEGINNING OF BREAKPOINT STYLES FOR RESPONSIVE DESIGN
