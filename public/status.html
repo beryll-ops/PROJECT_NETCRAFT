@@ -4,10 +4,13 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Status</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet" />
 		<link rel="stylesheet" href="style.css" />
+		<script src="./main.js"></script>
 	</head>
 	<body>
 		<header>
@@ -49,46 +52,64 @@
 			<!-- </div> -->
 		</nav>
 		<main>
-			<section class="dark-bg-shadow"> 
-                <!-- Switch turning On and Off server, also players count -->
-				<div>
-                    <img src="./resources/ON.png" alt="Button_on" width="40%" id="button_on_off" onclick="server_start()">
+			<section class="dark-bg-shadow">
+				<!-- Switch turning On and Off server, also players count -->
+				<div class="start-stop-btn">
+					<img
+						src="./resources/ON.png"
+						alt="Button_on"
+						width="40%"
+						id="stopBtn" />
+					<img
+						src="./resources/OFF.png"
+						alt="Button_on"
+						width="40%"
+						id="startBtn" />
 				</div>
-                <div>
-					<img src="./resources/number_of_players_0.png" alt="number of players online" id="number_0" width="40%">
-					<br>
-					<button onclick="players_number()">Test Wyświetlacza Graczy Online</button>
+				<script>
+					
+				</script>
+				<div>
+					<img
+						src="./resources/number_of_players_0.png"
+						alt="number of players online"
+						id="number_0"
+						width="40%" />
+					<br />
+					<button onclick="players_number()">
+						Test Wyświetlacza Graczy Online
+					</button>
 					<button onclick="test_stop()">Reset testu</button>
 				</div>
-                <!-- End of whatever -->
+				<!-- End of whatever -->
 
-                <!-- There will be Working Clock With TPS Info-->
-					<div class="gauge">
-						<div class="slice-colors">
+				<!-- There will be Working Clock With TPS Info-->
+				<div class="gauge">
+					<div class="slice-colors">
 						<div class="st slice-item"></div>
 						<div class="st slice-item"></div>
 						<div class="st slice-item"></div>
 						<div class="st slice-item"></div>
 						<div class="st slice-item"></div>
-						</div>
-						<div class="needle"></div>
-						<div class="gauge-center"></div>
 					</div>
-                <!-- End Of Clock -->
+					<div class="needle"></div>
+					<div class="gauge-center"></div>
+				</div>
+				<!-- End Of Clock -->
 
-                <!-- There will be Working Clock With RAM Info-->
-					<div class="gauge">
-						<div class="slice-colors">
+				<!-- There will be Working Clock With RAM Info-->
+				<div class="gauge">
+					<div class="slice-colors">
 						<div class="st slice-item"></div>
 						<div class="st slice-item"></div>
 						<div class="st slice-item"></div>
 						<div class="st slice-item"></div>
 						<div class="st slice-item"></div>
-						</div>
-						<div class="needle"></div>
-						<div class="gauge-center"></div>
 					</div>
-                <!-- End Of Clock -->
+					<div class="needle"></div>
+					<div class="gauge-center"></div>
+				</div>
+				<!-- End Of Clock -->
 			</section>
 		</main>
 		<footer>
@@ -99,6 +120,6 @@
 				reserved.
 			</p>
 		</footer>
-		<script src="main.js"></script>
+		<script src="./serverStart.js"></script>
 	</body>
 </html>
