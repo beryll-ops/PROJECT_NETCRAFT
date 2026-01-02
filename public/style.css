@@ -167,7 +167,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	background-color: #ccc;
-	background-image: url(./resources/background.png);
+	/* background-image: url(./resources/background.png); */
 }
 header .logo {
 	display: flex;

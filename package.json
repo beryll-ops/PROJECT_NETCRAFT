@@ -1,0 +1,28 @@
+{
+  "name": "project_netcraft",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beryll-ops/PROJECT_NETCRAFT.git"
+  },
+  "author": "beryll & _nutt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beryll-ops/PROJECT_NETCRAFT/issues"
+  },
+  "homepage": "https://github.com/beryll-ops/PROJECT_NETCRAFT#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "exaroton": "^2.0.1",
+    "express": "^5.2.1",
+    "node.js": "^0.0.1-security",
+    "ws": "^8.18.3"
+  }
+}
