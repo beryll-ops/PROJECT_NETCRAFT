@@ -3,8 +3,6 @@ const nav = document.querySelector('nav');
 const mainContent = document.querySelector('main');
 const footer = document.querySelector('footer');
 
-// let i = 0; ????????????
-
 function openMenu() {
 	nav.classList.toggle('open');
 	burgerIcon.classList.toggle('open');
@@ -19,7 +17,6 @@ function openMenu() {
 	}
 }
 burgerIcon.addEventListener('click', openMenu);
-
 
 // Flap clock script
 const targetDate = new Date('2024-12-31T23:59:59');
@@ -43,12 +40,10 @@ function getTimeSegmentElements(segmentElement) {
 	};
 }
 
-
 function updateFlapClock(segmentElement, overlayElement, value) {
 	segmentElement.textContent = value;
 	overlayElement.textContent = value;
 }
-
 
 function updateTimeSegment(segmentElement, timeValue) {
 	const segmentElements = getTimeSegmentElements(segmentElement);
@@ -79,32 +74,36 @@ function updateTimeSegment(segmentElement, timeValue) {
 	);
 }
 
-
 function updateTimeSection(sectionID, timeValue) {
 	//14
 	const firstNumber = Math.floor(timeValue / 10); //1
 	const secondNumber = timeValue % 10; //4
 
 	const sectionElement = document.getElementById(sectionID);
-	const timeSegments = sectionElement.querySelectorAll('.time-segment');
+	let errorHandler = 0;
+	try {
+		const timeSegments = sectionElement.querySelectorAll('.time-segment');
+	} catch (e) {
+		errorHandler = 1;
+	}
+	if (errorHandler === 0) {
+		const timeSegments = sectionElement.querySelectorAll('.time-segment');
+		updateTimeSegment(timeSegments[0], firstNumber);
+		updateTimeSegment(timeSegments[1], secondNumber);
+	}
+	console.log(errorHandler);
 	// To check which segment is under which index check getTimeSegmentElements function's return statement. They are listed in order there.
-	updateTimeSegment(timeSegments[0], firstNumber);
-	updateTimeSegment(timeSegments[1], secondNumber);
 }
-
 
 let acapulco = 12432;
 async function fetchServerUptime() {
 	return acapulco; // Example uptime in seconds
 }
 
-
 setInterval(async () => {
 	await fetchServerUptime();
 	acapulco++;
-	console.log('Server uptime fetched' + acapulco);
 }, 1000);
-
 
 async function updateFlapClockDisplay() {
 	const uptimeInSeconds = await fetchServerUptime();
@@ -117,7 +116,6 @@ async function updateFlapClockDisplay() {
 	updateTimeSection('hours', hours);
 	updateTimeSection('minutes', minutes);
 }
-
 
 setInterval(async () => {
 	await updateFlapClockDisplay();
